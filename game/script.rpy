@@ -1,13 +1,34 @@
 ﻿# GABRIELA
 define gab_text = Character("Габриэла", image="к", color="#c2c2c2")
 define gab_text_nvl = Character("Габриэла", kind=nvl, image="edgy")
-image gabriela normal   = "heroes/Gabriela/Gwithoutsmile.webp"
-image gabriela happy    = "heroes/Gabriela/Ghappy.webp"
-image gabriela angry    = "heroes/Gabriela/Gangry.webp"
-image gabriela shy      = "heroes/Gabriela/shy.webp"
-image gabriela surprise = "heroes/Gabriela/surprise.webp"
-image gabriela sad      = "heroes/Gabriela/Gsad.webp"
+image gabriela_without_smile   = "heroes/Gabriela/Gwithoutsmile.webp"
+image gabriela_happy    = "heroes/Gabriela/Normal/Ghappy.webp"
+image gabriela_angry    = "heroes/Gabriela/Normal/Gangry.webp"
+image gabriela_shy      = "heroes/Gabriela/Normal/shy.webp"
+image gabriela_surprise = "heroes/Gabriela/Normal/surprise.webp"
+image gabriela_sad      = "heroes/Gabriela/Normal/Gsad.webp" 
+image gabriela_normal   = "heroes/Gabriela/Normal/Gnorm.webp"
 
+image gabriela_white_normal = "heroes/Gabriela/White/GWnorm.webp"
+image gabriela_white_smile  = "heroes/Gabriela/White/GWsmile.webp"
+image gabriela_white_flirt  = "heroes/Gabriela/White/GWflirt.webp"
+image gabriela_white_sad    = "heroes/Gabriela/White/GWsad.webp"
+image gabriela_white_shok   = "heroes/Gabriela/White/GWshok.webp"
+image gabriela_white_angry  = "heroes/Gabriela/White/GWangry.webp"
+image gabriela_white_cry    = "heroes/Gabriela/White/GWcry.webp"
+
+image gabriela_black_normal = "heroes/Gabriela/Black/GBnorm.webp"
+image gabriela_black_smile  = "heroes/Gabriela/Black/GBsmile.webp"
+image gabriela_black_flirt  = "heroes/Gabriela/Black/GBflirt.webp"
+image gabriela_black_sad    = "heroes/Gabriela/Black/GBsad.webp"
+image gabriela_black_shok   = "heroes/Gabriela/Black/GBshok.webp"
+image gabriela_black_angry  = "heroes/Gabriela/Black/GBangry.webp"
+image gabriela_black_cry    = "heroes/Gabriela/Black/GBcry.webp"
+
+image gabriela_nacked_flirt = "heroes/Gabriela/Nacked/NackedGflirt.webp"
+image gabriela_nacked_sexy  = "heroes/Gabriela/Nacked/NackedGsexy.webp"
+image gabriela_nacked_eyes  = "heroes/Gabriela/Nacked/NackedGeyes.webp"
+image gabriela_nacked_sad   = "heroes/Gabriela/Nacked/NackedGsad.webp"
 
 # MASON
 define mas_text = Character("Мейсон", image="к", color="#c2c2c2")
@@ -65,18 +86,50 @@ image margo strange = "heroes/Margo/Mstrange.webp"
 # ТАКСИСТ
 define taxi_driver = Character("  Таксист", image="к", color="#c2c2c2")
 define taxi_driver_nvl = Character("Таксист", kind=nvl, image="edgy")
+image taksist = "heroes/Other/taksist.webp"
+
+# ОФИЦИАНТКА
+define oficiant = Character("  Официантка", image="к", color="#c2c2c2")
+define oficiant_nvl = Character("Официантка", kind=nvl, image="edgy")
+image oficiant = "heroes/Other/Oficiant.webp"
 
 default bg_side = "center"
 
 init python:
     
-    gabriela = [
-        "gabriela normal",   #0
-        "gabriela happy",    #1
-        "gabriela angry",    #2
-        "gabriela shy",      #3
-        "gabriela surprise", #4
-        "gabriela sad",      #5
+    gabriela_normal1 = [
+        "gabriela_normal",   #0
+        "gabriela_happy",    #1
+        "gabriela_angry",    #2
+        "gabriela_shy",      #3
+        "gabriela_surprise", #4
+        "gabriela_sad",      #5
+    ]
+
+    gabriela_white = [
+        "gabriela_white_normal", #0
+        "gabriela_white_smile",  #1
+        "gabriela_white_flirt",  #2
+        "gabriela_white_sad",    #3
+        "gabriela_white_shok",   #4
+        "gabriela_white_angry",  #5
+        "gabriela_white_cry",    #6
+    ]
+
+    gabriela_black = [
+        "gabriela_black_normal", #0
+        "gabriela_black_smile",  #1
+        "gabriela_black_flirt",  #2
+        "gabriela_black_sad",    #3
+        "gabriela_black_shok",   #4
+        "gabriela_black_angry",  #5
+        "gabriela_black_cry",    #6
+    ]
+    gabriela_nacked = [
+        "gabriela_nacked_flirt", #0
+        "gabriela_nacked_sexy",  #1
+        "gabriela_nacked_eyes",  #2
+        "gabriela_nacked_sad",   #3
     ]
 
     mason = [
@@ -113,6 +166,7 @@ init python:
         "olivia sad",    #3
         "olivia flirt",  #4
     ]
+
     margo = [
         "margo normal",  #0
         "margo sad",     #1
@@ -121,6 +175,15 @@ init python:
         "margo strange", #4
         "margo flirt",   #5
     ]
+
+    taksist = [
+        "taksist",  #0
+    ]
+
+    oficiant = [
+        "oficiant",  #0
+    ]
+
 
     small_char = Transform(
         zoom=0.9,
@@ -131,18 +194,38 @@ init python:
         store.tb_id = n
 
     def swap_char(char_array, index, *transforms):
+
+        image_name = char_array[index]
+
+        # Если имя через пробел (mason normal)
+        if " " in image_name:
+            tag_name = image_name.split()[0]
+        # Если имя через подчёркивание (gabriela_black_normal)
+        else:
+            tag_name = image_name.split("_")[0]
+
+        # Удаляем старого персонажа
+        renpy.hide(tag_name)
+
+        # Показываем нового
         renpy.show(
-            char_array[index],
-            tag="main_char",
+            image_name,
+            tag=tag_name,
             at_list=list(transforms)
         )
 
 
 transform slide_in_left:
-    xalign -0.5
+    xalign 20.0
     yalign 1.0
     alpha 0.0
-    linear 0.5 xalign 0 alpha 1.0
+    linear 0.5 xalign 12.0 alpha 1.0
+
+transform slide_in_right:
+    xalign -20.0
+    yalign 1.0
+    alpha 0.0
+    linear 0.5 xalign -12.0 alpha 1.0
 
 image airport = "gui/BGs/BgAirplaneInside.webp"
 image taxi_air = "gui/BGs/BgAirplaneStreet.webp"
@@ -166,12 +249,22 @@ image oks = "gui/BGs/BgOksford.webp"
 
 label start:
 
-    scene airport:
+    scene airport: #Двигать фон
         xalign 0.0
         yalign 0.4
         zoom 1.5
+        linear 0.5 xalign 0 alpha 1.0
 
+    # show gabriela normal
+    
+    $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_right)
+    gab_text "Test1"
 
+    $ swap_char("gabriela", gabriela_normal, 0, small_char, slide_in_left)
+    gab_text "Test2"
+
+    $ swap_char("mason", mason, 0, small_char, slide_in_right)
+    mas_text "Test3"
 
     hide main_char
     dictore "Хитроу встретил меня типичным британским гостеприимством:"
@@ -189,6 +282,7 @@ label start:
     dictore "Рядом притормозил черный «Nissan Leaf», стекло медленно опустилось."
     dictore "За рулем сидел мужчина лет сорока с сальной улыбкой."
 
+    $ swap_char(taksist, 0, small_char, slide_in_right)
     taxi_driver "Эй, красавица! Давай сюда свои баулы. Подброшу с ветерком."
 
     $ swap_char(gabriela, 0, small_char, slide_in_left)
