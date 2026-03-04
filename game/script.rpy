@@ -65,8 +65,8 @@ image stacey shok = "heroes/Stecey/Sshok.webp"
 image stacey vampire = "heroes/Stecey/Svamp.webp"
 
 # OLIVIA
-define sta_text = Character("Оливия", image="к", color="#c2c2c2")
-define sta_text_nvl = Character("Оливия", kind=nvl, image="edgy")
+define oli_text = Character("Оливия", image="к", color="#c2c2c2")
+define oli_text_nvl = Character("Оливия", kind=nvl, image="edgy")
 image olivia normal = "heroes/Olivia/Onorm.webp"
 image olivia smile = "heroes/Olivia/Osmile.webp"
 image olivia angry = "heroes/Olivia/Oangry.webp"
@@ -97,7 +97,7 @@ default bg_side = "center"
 
 init python:
     
-    gabriela_normal1 = [
+    gabriela_normal_hero = [
         "gabriela_normal",   #0
         "gabriela_happy",    #1
         "gabriela_angry",    #2
@@ -125,6 +125,7 @@ init python:
         "gabriela_black_angry",  #5
         "gabriela_black_cry",    #6
     ]
+
     gabriela_nacked = [
         "gabriela_nacked_flirt", #0
         "gabriela_nacked_sexy",  #1
@@ -151,7 +152,7 @@ init python:
 
     stacey = [
         "stacey normal",  #0
-        "stacey happy",   #1
+        "stacey flirt",   #1
         "stacey angry",   #2
         "stacey cry",     #3
         "stacey sad",     #4
@@ -184,7 +185,6 @@ init python:
         "oficiant",  #0
     ]
 
-
     small_char = Transform(
         zoom=0.9,
         yalign=1.0
@@ -193,39 +193,40 @@ init python:
     def textbox(n):
         store.tb_id = n
 
-    def swap_char(char_array, index, *transforms):
+    active_characters = []
 
-        image_name = char_array[index]
+    def swap_char(tag_name, char_array, index, *transforms):
 
-        # Если имя через пробел (mason normal)
-        if " " in image_name:
-            tag_name = image_name.split()[0]
-        # Если имя через подчёркивание (gabriela_black_normal)
-        else:
-            tag_name = image_name.split("_")[0]
+        global active_characters
 
-        # Удаляем старого персонажа
-        renpy.hide(tag_name)
+        # Скрываем всех предыдущих
+        for tag in active_characters:
+            if tag != tag_name:
+                renpy.hide(tag)
+
+        active_characters = [tag_name]
 
         # Показываем нового
         renpy.show(
-            image_name,
+            char_array[index],
             tag=tag_name,
             at_list=list(transforms)
         )
 
 
 transform slide_in_left:
-    xalign 20.0
+    xalign -0.9
     yalign 1.0
     alpha 0.0
-    linear 0.5 xalign 12.0 alpha 1.0
+    zoom 0.9
+    linear 0.5 xalign 0.1 alpha 1.0
 
 transform slide_in_right:
-    xalign -20.0
+    xalign 1.5
     yalign 1.0
     alpha 0.0
-    linear 0.5 xalign -12.0 alpha 1.0
+    zoom 0.9
+    linear 0.5 xalign 0.9 alpha 1.0
 
 image airport = "gui/BGs/BgAirplaneInside.webp"
 image taxi_air = "gui/BGs/BgAirplaneStreet.webp"
@@ -257,43 +258,91 @@ label start:
 
     # show gabriela normal
     
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_right)
+    gab_text "Right"
+
+    $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_left)
+    gab_text "Left"
     $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_right)
-    gab_text "Test1"
+    gab_text "Right"
 
-    $ swap_char("gabriela", gabriela_normal, 0, small_char, slide_in_left)
-    gab_text "Test2"
+    $ swap_char("gabriela", gabriela_white, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("gabriela", gabriela_white, 0, small_char, slide_in_right)
+    gab_text "Right"
 
+    $ swap_char("gabriela", gabriela_nacked, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("gabriela", gabriela_nacked, 0, small_char, slide_in_right)
+    gab_text "Right"
+
+    $ swap_char("mason", mason, 0, small_char, slide_in_left)
+    mas_text "Left"
     $ swap_char("mason", mason, 0, small_char, slide_in_right)
-    mas_text "Test3"
+    mas_text "Right"
 
-    hide main_char
-    dictore "Хитроу встретил меня типичным британским гостеприимством:"
-    dictore "серым небом и очередями. Перелет из Штатов прошел терпимо,"
-    dictore "если не считать легкой турбулентности над Атлантикой. Но это мелочи."
-    dictore "Главное испытание впереди: два семестра в Оксфорде по обмену."
-    dictore "Из Гарварда — в самую древнюю дыру Англии."
+    $ swap_char("bowie", bowie, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("bowie", bowie, 0, small_char, slide_in_right)
+    gab_text "Right"
+    
+    $ swap_char("stacey", stacey, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
+    gab_text "Right"
 
-    $ swap_char(gabriela, 2, small_char, slide_in_left)
-    gab_text "{i}Боже, этот акцент... Он уже сверлит мне мозг.{/i}"
-    gab_text "{i}Надеюсь, местные профессора хотя бы знают, что такое дезодорант, в отличие от людей в этой толпе.{/i}"
+    $ swap_char("olivia", olivia, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("olivia", olivia, 0, small_char, slide_in_right)
+    gab_text "Right"
 
-    scene taxi_air
-    dictore "Я вытащила два тяжелых чемодана на тротуар, высматривая кэб."
-    dictore "Рядом притормозил черный «Nissan Leaf», стекло медленно опустилось."
-    dictore "За рулем сидел мужчина лет сорока с сальной улыбкой."
+    $ swap_char("margo", margo, 0, small_char, slide_in_left)
+    gab_text "Left"
+    $ swap_char("margo", margo, 0, small_char, slide_in_right)
+    gab_text "Right"
 
-    $ swap_char(taksist, 0, small_char, slide_in_right)
-    taxi_driver "Эй, красавица! Давай сюда свои баулы. Подброшу с ветерком."
+    $ swap_char("taksist", taksist, 0, small_char, slide_in_left)
+    mas_text "Left"
+    $ swap_char("taksist", taksist, 0, small_char, slide_in_right)
+    mas_text "Right"
 
-    $ swap_char(gabriela, 0, small_char, slide_in_left)
-    gab_text "{i}Прекрасно. Поездка не обойдется без дешевого флирта{/i}"
+    $ swap_char("oficiant", oficiant, 0, small_char, slide_in_left)
+    mas_text "Left"
+    $ swap_char("oficiant", oficiant, 0, small_char, slide_in_right)
+    mas_text "Right"
 
-    scene in_taxi
-    dictore "Я молча позволила загрузить багаж и нырнула на заднее сиденье,"
-    dictore "демонстративно натягивая большие наушники."
-    dictore "Всем своим видом она кричала: «Не влезай — убьет». Машина тронулась."
-    dictore "Через пару минут экран телефона вспыхнул."
-    dictore "Входящий видеовызов: «Маргошка Бейби»."
+    
+
+    # hide main_char
+    # dictore "Хитроу встретил меня типичным британским гостеприимством:"
+    # dictore "серым небом и очередями. Перелет из Штатов прошел терпимо,"
+    # dictore "если не считать легкой турбулентности над Атлантикой. Но это мелочи."
+    # dictore "Главное испытание впереди: два семестра в Оксфорде по обмену."
+    # dictore "Из Гарварда — в самую древнюю дыру Англии."
+
+    # $ swap_char(gabriela, 2, small_char, slide_in_left)
+    # gab_text "{i}Боже, этот акцент... Он уже сверлит мне мозг.{/i}"
+    # gab_text "{i}Надеюсь, местные профессора хотя бы знают, что такое дезодорант, в отличие от людей в этой толпе.{/i}"
+
+    # scene taxi_air
+    # dictore "Я вытащила два тяжелых чемодана на тротуар, высматривая кэб."
+    # dictore "Рядом притормозил черный «Nissan Leaf», стекло медленно опустилось."
+    # dictore "За рулем сидел мужчина лет сорока с сальной улыбкой."
+
+    # $ swap_char(taksist, 0, small_char, slide_in_right)
+    # taxi_driver "Эй, красавица! Давай сюда свои баулы. Подброшу с ветерком."
+
+    # $ swap_char(gabriela, 0, small_char, slide_in_left)
+    # gab_text "{i}Прекрасно. Поездка не обойдется без дешевого флирта{/i}"
+
+    # scene in_taxi
+    # dictore "Я молча позволила загрузить багаж и нырнула на заднее сиденье,"
+    # dictore "демонстративно натягивая большие наушники."
+    # dictore "Всем своим видом она кричала: «Не влезай — убьет». Машина тронулась."
+    # dictore "Через пару минут экран телефона вспыхнул."
+    # dictore "Входящий видеовызов: «Маргошка Бейби»."
 
 
 
