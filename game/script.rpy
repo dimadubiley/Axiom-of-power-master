@@ -211,7 +211,16 @@ init python:
             char_array[index],
             tag=tag_name,
             at_list=list(transforms)
-        )
+    )
+
+    def show_two_heous(tag_name, char_array, index, *transforms):
+
+        # Показываем нового
+        renpy.show(
+            char_array[index],
+            tag=tag_name,
+            at_list=list(transforms)
+    )
 
 
 transform slide_in_left:
@@ -313,7 +322,8 @@ label start:
     mar_text "Если увидишь бледного красавчика, который смотрит на тебя как на еду"
     mar_text "свистни, я примчусь первым поездом! Ха-ха-ха!"
     
-    hide main_char
+    $ swap_char("margo", margo, 5, small_char, slide_in_right)
+    $ show_two_heous("gabriela", gabriela_normal_hero, 1, small_char, slide_in_left)
     dictore "(Обе громко смеются)"
 
     $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
@@ -329,8 +339,16 @@ label start:
     gab_text "Больно надо. Эти парни проглатывают половину алфавита,"
     gab_text "когда говорят. Меня этот акцент с ума сведет раньше, чем учеба."
 
+    $ swap_char("taksist", taksist, 0, small_char, slide_in_right)
+    taxi_driver "Таксист бросил на нее презрительный взгляд через зеркало заднего вида."
+    taxi_driver "Габи это заметила и лишь закатила глаза."
     
-    
+    $ swap_char("margo", margo, 0, small_char, slide_in_right)
+    mar_text "Ладно, зануда. Меня Джейдан зовет. Набери, как заселишься в свою келью!"
+
+    hide margo
+    dictore "{i}(Звонок завершен)"
+
     $ swap_char("margo", margo, 0, small_char, slide_in_right)
     mar_text ""
     mar_text ""
