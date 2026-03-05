@@ -74,8 +74,8 @@ image olivia sad = "heroes/Olivia/Osad.webp"
 image olivia flirt = "heroes/Olivia/Oflirt.webp"
 
 # MARGO
-define mar_text = Character("Маргошка Бэйби", image="к", color="#c2c2c2")
-define mar_text_nvl = Character("Маргошка Бэйби", kind=nvl, image="edgy")
+define mar_text = Character("     Маргарет", image="к", color="#c2c2c2")
+define mar_text_nvl = Character("Маргарет", kind=nvl, image="edgy")
 image margo angry = "heroes/Margo/Mangry.webp"
 image margo flirt = "heroes/Margo/Mflirt.webp"
 image margo normal = "heroes/Margo/Mnormal.webp"
@@ -186,7 +186,7 @@ init python:
     ]
 
     small_char = Transform(
-        zoom=0.9,
+        zoom=1,
         yalign=1.0
     )
 
@@ -257,6 +257,18 @@ image kor_c = "gui/BGs/BgKoridorCampus.webp"
 image kor_u = "gui/BGs/BgKoridorUniv.webp"
 image oks = "gui/BGs/BgOksford.webp"
 
+transform gentle_sway:
+    # Немного увеличиваем фон, чтобы при сдвиге не вылезали черные края экрана
+    # zoom 1.05 align (0.5, 0.5)
+    
+    # Плавное движение
+    ease 0.5 yoffset 1 xoffset -10
+    ease 0.5 yoffset -2 xoffset -20
+    ease 0.5 yoffset 0 xoffset -15
+    
+    # Зацикливаем анимацию
+    repeat
+
 label start:
 
     scene airport: #Двигать фон
@@ -295,7 +307,7 @@ label start:
     $ swap_char("gabriela", gabriela_normal_hero, 2, small_char, slide_in_left)
     gab_text "{i}Прекрасно. Поездка не обойдется без дешевого флиртаю."
 
-    scene in_taxi:
+    scene in_taxi at gentle_sway:
         xalign 0.0
         yalign 0.4
         zoom 1.85
@@ -322,8 +334,7 @@ label start:
     mar_text "Если увидишь бледного красавчика, который смотрит на тебя как на еду"
     mar_text "свистни, я примчусь первым поездом! Ха-ха-ха!"
     
-    $ swap_char("margo", margo, 5, small_char, slide_in_right)
-    $ show_two_heous("gabriela", gabriela_normal_hero, 1, small_char, slide_in_left)
+    hide margo
     dictore "(Обе громко смеются)"
 
     $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
@@ -339,8 +350,10 @@ label start:
     gab_text "Больно надо. Эти парни проглатывают половину алфавита,"
     gab_text "когда говорят. Меня этот акцент с ума сведет раньше, чем учеба."
 
-    $ swap_char("taksist", taksist, 0, small_char, slide_in_right)
+    hide gabriela
     taxi_driver "Таксист бросил на нее презрительный взгляд через зеркало заднего вида."
+    $ swap_char("taksist", taksist, 0, small_char, slide_in_right)
+    taxi_driver "..."
     taxi_driver "Габи это заметила и лишь закатила глаза."
     
     $ swap_char("margo", margo, 0, small_char, slide_in_right)
