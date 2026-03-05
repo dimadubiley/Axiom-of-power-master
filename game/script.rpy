@@ -1,5 +1,5 @@
 ﻿# GABRIELA
-define gab_text = Character("Габриэла", image="к", color="#c2c2c2")
+define gab_text = Character("     Габриэла", image="к", color="#c2c2c2")
 define gab_text_nvl = Character("Габриэла", kind=nvl, image="edgy")
 image gabriela_without_smile   = "heroes/Gabriela/Gwithoutsmile.webp"
 image gabriela_happy    = "heroes/Gabriela/Normal/Ghappy.webp"
@@ -31,7 +31,7 @@ image gabriela_nacked_eyes  = "heroes/Gabriela/Nacked/NackedGeyes.webp"
 image gabriela_nacked_sad   = "heroes/Gabriela/Nacked/NackedGsad.webp"
 
 # MASON
-define mas_text = Character("Мейсон", image="к", color="#c2c2c2")
+define mas_text = Character("       Мейсон", image="к", color="#c2c2c2")
 define mas_text_nvl = Character("Мейсон", kind=nvl, image="edgy")
 image mason normal   = "heroes/Mason/Maynorm.webp"
 image mason flirt    = "heroes/Mason/Mayflirt.webp"
@@ -41,7 +41,7 @@ image mason shok = "heroes/Mason/Mayshok.webp"
 image mason angry    = "heroes/Mason/Mangry.webp"
 
 # BOWIE
-define bow_text = Character("    Боуи", image="к", color="#c2c2c2")
+define bow_text = Character("         Боуи", image="к", color="#c2c2c2")
 define bow_text_nvl = Character("Боуи", kind=nvl, image="edgy")
 image bowie shok   = "heroes/Bowie/Bshok.webp"
 image bowie flirt    = "heroes/Bowie/Bflirt.webp"
@@ -50,22 +50,22 @@ image bowie vampire  = "heroes/Bowie/Bvamp.webp"
 image bowie angry  = "heroes/Bowie/Bangry.webp"
 
 # DICTORE
-define dictore = Character("        . . .", image="к", color="#c2c2c2")
+define dictore = Character("             . . .", image="к", color="#c2c2c2")
 define dictore_nvl = Character("...", kind=nvl, image="edgy")
 
 # STACEY
-define sta_text = Character("Стейси", image="к", color="#c2c2c2")
+define sta_text = Character("       Стейси", image="к", color="#c2c2c2")
 define sta_text_nvl = Character("Стейси", kind=nvl, image="edgy")
-image stacey normal = "heroes/Stecey/Snorm.webp"
-image stacey flirt = "heroes/Stecey/Sflirt.webp"
-image stacey angry = "heroes/Stecey/Sangry.webp"
-image stacey cry = "heroes/Stecey/Scry.webp"
-image stacey sad = "heroes/Stecey/Ssad.webp"
-image stacey shok = "heroes/Stecey/Sshok.webp"
-image stacey vampire = "heroes/Stecey/Svamp.webp"
+image stacey normal = "heroes/Stacey/Snorm.webp"
+image stacey flirt = "heroes/Stacey/Sflirt.webp"
+image stacey angry = "heroes/Stacey/Sangry.webp"
+image stacey cry = "heroes/Stacey/Scry.webp"
+image stacey sad = "heroes/Stacey/Ssad.webp"
+image stacey shok = "heroes/Stacey/Sshok.webp"
+image stacey vampire = "heroes/Stacey/Svamp.webp"
 
 # OLIVIA
-define oli_text = Character("Оливия", image="к", color="#c2c2c2")
+define oli_text = Character("       Оливия", image="к", color="#c2c2c2")
 define oli_text_nvl = Character("Оливия", kind=nvl, image="edgy")
 image olivia normal = "heroes/Olivia/Onorm.webp"
 image olivia smile = "heroes/Olivia/Osmile.webp"
@@ -84,13 +84,13 @@ image margo shok = "heroes/Margo/Mshok.webp"
 image margo strange = "heroes/Margo/Mstrange.webp"
 
 # ТАКСИСТ
-define taxi_driver = Character("  Таксист", image="к", color="#c2c2c2")
+define taxi_driver = Character("      Таксист", image="к", color="#c2c2c2")
 define taxi_driver_nvl = Character("Таксист", kind=nvl, image="edgy")
 image taksist = "heroes/Other/taksist.webp"
 
 # ОФИЦИАНТКА
-define oficiant = Character("  Официантка", image="к", color="#c2c2c2")
-define oficiant_nvl = Character("Официантка", kind=nvl, image="edgy")
+define oficiant_text = Character(" Официантка", image="к", color="#c2c2c2")
+define oficiant_text_nvl = Character("Официантка", kind=nvl, image="edgy")
 image oficiant = "heroes/Other/Oficiant.webp"
 
 default bg_side = "center"
@@ -255,15 +255,93 @@ label start:
         yalign 0.4
         zoom 1.5
         linear 0.5 xalign 0 alpha 1.0
-
-    # show gabriela normal
     
-    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
-    gab_text "Left"
-    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_right)
-    gab_text "Right"
+    hide main_char
+    dictore "Хитроу встретил меня типичным британским гостеприимством:"
+    dictore "серым небом и очередями. Перелет из Штатов прошел терпимо,"
+    dictore "если не считать легкой турбулентности над Атлантикой."
+    dictore "Но это мелочи. Главное испытание впереди: два семестра в Оксфорде по обмену."
+    dictore "Из Гарварда — в самую древнюю дыру Англии."
 
-    $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_left)
+    $ swap_char("gabriela", gabriela_normal_hero, 2, small_char, slide_in_left)
+    gab_text "{i}Боже, этот акцент... Он уже сверлит мне мозг."
+    gab_text "{i}Надеюсь, местные профессора хотя бы знают, что такое дезодорант,"
+    gab_text "{i}в отличие от людей в этой толпе."
+
+
+    scene taxi_air:
+        xalign 0.0
+        yalign 0.4
+        zoom 1.5
+        linear 0.5 xalign 0 alpha 1.0
+
+
+    dictore "{i}Я вытащила два тяжелых чемодана на тротуар, высматривая кэб."
+    dictore "{i}Рядом притормозил черный «Nissan Leaf», стекло медленно опустилось."
+    dictore "{i}За рулем сидел мужчина лет сорока с сальной улыбкой."
+
+    $ swap_char("taksist", taksist, 0, small_char, slide_in_right)
+    taxi_driver "Эй, красавица! Давай сюда свои баулы. Подброшу с ветерком."
+
+    $ swap_char("gabriela", gabriela_normal_hero, 2, small_char, slide_in_left)
+    gab_text "{i}Прекрасно. Поездка не обойдется без дешевого флиртаю."
+
+    scene in_taxi:
+        xalign 0.0
+        yalign 0.4
+        zoom 1.85
+        linear 0.5 xalign 0 alpha 1.0
+    
+    dictore "Я молча позволила загрузить багаж и нырнула на заднее сиденье,"
+    dictore "демонстративно натягивая большие наушники. Всем своим видом она кричала: «Не влезай — убьет»"
+    dictore "Машина тронулась. Через пару минут экран телефона вспыхнул."
+    dictore "Входящий видеовызов: «Маргошка (Кембридж) 🐍»."
+
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+    gab_text "Ну привет, предательница."
+    $ swap_char("margo", margo, 0, small_char, slide_in_right)
+    mar_text "И тебе не хворать! Ну, как там на туманном Альбионе?"
+    mar_text "Небось, серо, мокро и хочется удавиться?"
+    mar_text "А у нас в Кембридже солнце шпарит, завидуй!"
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+    gab_text "{i}Марго всегда выражала любовь через подколы. Это был их особый код."
+    gab_text "Туманно, но терпимо. Знаешь, есть в этом какой-то вайб... «Сумерек»."
+    gab_text "Только без блестящих вампиров."
+    
+    $ swap_char("margo", margo, 0, small_char, slide_in_right)
+    mar_text "О-о-о! А Эдвард с Джейкобом будут?"
+    mar_text "Если увидишь бледного красавчика, который смотрит на тебя как на еду"
+    mar_text "свистни, я примчусь первым поездом! Ха-ха-ха!"
+    
+    hide main_char
+    dictore "(Обе громко смеются)"
+
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+    gab_text "Я еще в дороге. Минут через двадцать буду на месте."
+    gab_text "Честно говоря... не знаю, как меня встретят эти британские снобы. "
+    gab_text "Гарвард для них — «слишком новомодно»."
+    
+    $ swap_char("margo", margo, 0, small_char, slide_in_right)
+    mar_text "Плевать на снобов. Твоя цель — главный красавчик универа."
+    mar_text "Охмури его и разбей сердце во славу американского флага!"
+
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+    gab_text "Больно надо. Эти парни проглатывают половину алфавита,"
+    gab_text "когда говорят. Меня этот акцент с ума сведет раньше, чем учеба."
+
+    
+    
+    $ swap_char("margo", margo, 0, small_char, slide_in_right)
+    mar_text ""
+    mar_text ""
+    mar_text ""
+    $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+    gab_text ""
+    gab_text ""
+    gab_text ""
+
+
+
     gab_text "Left"
     $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_right)
     gab_text "Right"
@@ -284,43 +362,38 @@ label start:
     mas_text "Right"
 
     $ swap_char("bowie", bowie, 0, small_char, slide_in_left)
-    gab_text "Left"
+    bow_text "Left"
     $ swap_char("bowie", bowie, 0, small_char, slide_in_right)
-    gab_text "Right"
+    bow_text "Right"
     
     $ swap_char("stacey", stacey, 0, small_char, slide_in_left)
-    gab_text "Left"
+    sta_text "Left"
     $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
-    gab_text "Right"
+    sta_text "Right"
 
     $ swap_char("olivia", olivia, 0, small_char, slide_in_left)
-    gab_text "Left"
+    oli_text "Left"
     $ swap_char("olivia", olivia, 0, small_char, slide_in_right)
-    gab_text "Right"
+    oli_text "Right"
 
     $ swap_char("margo", margo, 0, small_char, slide_in_left)
-    gab_text "Left"
+    mar_text "Left"
     $ swap_char("margo", margo, 0, small_char, slide_in_right)
-    gab_text "Right"
+    mar_text "Right"
 
     $ swap_char("taksist", taksist, 0, small_char, slide_in_left)
-    mas_text "Left"
+    taxi_driver "Left"
     $ swap_char("taksist", taksist, 0, small_char, slide_in_right)
-    mas_text "Right"
+    taxi_driver "Right"
 
     $ swap_char("oficiant", oficiant, 0, small_char, slide_in_left)
-    mas_text "Left"
+    oficiant_text "Left"
     $ swap_char("oficiant", oficiant, 0, small_char, slide_in_right)
-    mas_text "Right"
+    oficiant_text "Right"
 
     
 
-    # hide main_char
-    # dictore "Хитроу встретил меня типичным британским гостеприимством:"
-    # dictore "серым небом и очередями. Перелет из Штатов прошел терпимо,"
-    # dictore "если не считать легкой турбулентности над Атлантикой. Но это мелочи."
-    # dictore "Главное испытание впереди: два семестра в Оксфорде по обмену."
-    # dictore "Из Гарварда — в самую древнюю дыру Англии."
+  
 
     # $ swap_char(gabriela, 2, small_char, slide_in_left)
     # gab_text "{i}Боже, этот акцент... Он уже сверлит мне мозг.{/i}"

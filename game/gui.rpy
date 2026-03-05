@@ -97,7 +97,7 @@ define gui.textbox_yalign = 0.85
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 
 #Имя персонада в диалоговом окне
-define gui.name_xpos = 395
+define gui.name_xpos = 330
 define gui.name_ypos = -375
 define gui.name_text_size = 50
 define gui.name_xalign = 0.5
