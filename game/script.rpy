@@ -33,12 +33,17 @@ image gabriela_nacked_sad   = "heroes/Gabriela/Nacked/NackedGsad.webp"
 # MASON
 define mas_text = Character("       Мейсон", image="к", color="#c2c2c2")
 define mas_text_nvl = Character("Мейсон", kind=nvl, image="edgy")
-image mason normal   = "heroes/Mason/Maynorm.webp"
-image mason flirt    = "heroes/Mason/Mayflirt.webp"
-image mason sad      = "heroes/Mason/Maysad.webp"
-image mason smile      = "heroes/Mason/Maysmile.webp"
-image mason shok = "heroes/Mason/Mayshok.webp"
-image mason angry    = "heroes/Mason/Mangry.webp"
+image mason normal   = "heroes/Mason/Normal/Maynorm.webp"
+image mason flirt    = "heroes/Mason/Normal/Mayflirt.webp"
+image mason sad      = "heroes/Mason/Normal/Maysad.webp"
+image mason smile      = "heroes/Mason/Normal/Maysmile.webp"
+image mason shok = "heroes/Mason/Normal/Mayshok.webp"
+image mason angry    = "heroes/Mason/Normal/Mangry.webp"
+
+image mason Nflirt = "heroes/Mason/Naked/MnackedFlirt.webp"
+image mason Njazyk = "heroes/Mason/Naked/MnackedJazyk.webp"
+image mason Nnorm = "heroes/Mason/Naked/MnackedNorm.webp"
+image mason Nsad = "heroes/Mason/Naked/MnackedSad.webp"
 
 # BOWIE
 define bow_text = Character("         Боуи", image="к", color="#c2c2c2")
@@ -140,6 +145,13 @@ init python:
         "mason smile",  #3
         "mason shok",   #4
         "mason angry",  #5
+    ]
+
+    mason_nacked = [
+        "mason Nnorm",  #0
+        "mason Nflirt", #1
+        "mason Njazyk", #2
+        "mason Nsad",   #3
     ]
 
     bowie = [
@@ -390,6 +402,11 @@ label start:
     $ swap_char("mason", mason, 0, small_char, slide_in_left)
     mas_text "Left"
     $ swap_char("mason", mason, 0, small_char, slide_in_right)
+    mas_text "Right"
+
+    $ swap_char("mason", mason_nacked, 0, small_char, slide_in_left)
+    mas_text "Left"
+    $ swap_char("mason", mason_nacked, 0, small_char, slide_in_right)
     mas_text "Right"
 
     $ swap_char("bowie", bowie, 0, small_char, slide_in_left)
