@@ -48,11 +48,16 @@ image mason Nsad = "heroes/Mason/Naked/MnackedSad.webp"
 # BOWIE
 define bow_text = Character("         Боуи", image="к", color="#c2c2c2")
 define bow_text_nvl = Character("Боуи", kind=nvl, image="edgy")
-image bowie shok   = "heroes/Bowie/Bshok.webp"
-image bowie flirt    = "heroes/Bowie/Bflirt.webp"
-image bowie sad      = "heroes/Bowie/Bsad.webp"
-image bowie vampire  = "heroes/Bowie/Bvamp.webp"
-image bowie angry  = "heroes/Bowie/Bangry.webp"
+image bowie shok   = "heroes/Bowie/Normal/Bshok.webp"
+image bowie flirt    = "heroes/Bowie/Normal/Bflirt.webp"
+image bowie sad      = "heroes/Bowie/Normal/Bsad.webp"
+image bowie vampire  = "heroes/Bowie/Normal/Bvamp.webp"
+image bowie angry  = "heroes/Bowie/Normal/Bangry.webp"
+
+image bowie nacked_angry = "heroes/Bowie/Nacked/BnackedAngry.webp"
+image bowie nacked_flirt = "heroes/Bowie/Nacked/BnackedFlirt.webp"
+image bowie nacked_norm = "heroes/Bowie/Nacked/BnackedNorm.webp"
+image bowie nacked_smile = "heroes/Bowie/Nacked/BnackedSmile.webp"
 
 # DICTORE
 define dictore = Character("             . . .", image="к", color="#c2c2c2")
@@ -102,6 +107,7 @@ default bg_side = "center"
 
 init python:
     
+    # ----------------- ГАБРИЕЛА -----------------
     gabriela_normal_hero = [
         "gabriela_normal",   #0
         "gabriela_happy",    #1
@@ -137,7 +143,7 @@ init python:
         "gabriela_nacked_eyes",  #2
         "gabriela_nacked_sad",   #3
     ]
-
+    # ----------------- МЕЙСОН -----------------
     mason = [
         "mason normal", #0
         "mason flirt",  #1
@@ -154,6 +160,7 @@ init python:
         "mason Nsad",   #3
     ]
 
+    # ----------------- БОУВИ -----------------
     bowie = [
         "bowie flirt",   #0
         "bowie shok",    #1
@@ -162,6 +169,14 @@ init python:
         "bowie angry",   #4
     ]
 
+    bowie_nacked = [
+        "bowie nacked_norm",
+        "bowie nacked_flirt",
+        "bowie nacked_smile",
+        "bowie nacked_angry",
+    ]
+
+    # ----------------- СТАЙСИ -----------------
     stacey = [
         "stacey normal",  #0
         "stacey flirt",   #1
@@ -172,6 +187,7 @@ init python:
         "stacey vampire", #6
     ]
 
+    # ----------------- ОЛИВИЯ -----------------
     olivia = [
         "olivia normal", #0
         "olivia smile",  #1
@@ -180,6 +196,7 @@ init python:
         "olivia flirt",  #4
     ]
 
+    # ----------------- МАРГО -----------------
     margo = [
         "margo normal",  #0
         "margo sad",     #1
@@ -413,6 +430,13 @@ label start:
     bow_text "Left"
     $ swap_char("bowie", bowie, 0, small_char, slide_in_right)
     bow_text "Right"
+
+    $ swap_char("bowie", bowie_nacked, 0, small_char, slide_in_left)
+    bow_text "Left"
+    $ swap_char("bowie", bowie_nacked, 0, small_char, slide_in_right)
+    bow_text "Right"
+    
+
     
     $ swap_char("stacey", stacey, 0, small_char, slide_in_left)
     sta_text "Left"
