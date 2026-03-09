@@ -17,7 +17,7 @@ image gabriela_white_shok   = "heroes/Gabriela/White/GWshok.webp"
 image gabriela_white_angry  = "heroes/Gabriela/White/GWangry.webp"
 image gabriela_white_cry    = "heroes/Gabriela/White/GWcry.webp"
 
-image gabriela_black_normal = "heroes/Gabriela/Black/GBnorm.webp"
+image gabriela_black_normal = "heroes/Gabriela/Black/GBnormal.webp"
 image gabriela_black_smile  = "heroes/Gabriela/Black/GBsmile.webp"
 image gabriela_black_flirt  = "heroes/Gabriela/Black/GBflirt.webp"
 image gabriela_black_sad    = "heroes/Gabriela/Black/GBsad.webp"
@@ -25,10 +25,10 @@ image gabriela_black_shok   = "heroes/Gabriela/Black/GBshok.webp"
 image gabriela_black_angry  = "heroes/Gabriela/Black/GBangry.webp"
 image gabriela_black_cry    = "heroes/Gabriela/Black/GBcry.webp"
 
-image gabriela_nacked_flirt = "heroes/Gabriela/Nacked/NackedGflirt.webp"
-image gabriela_nacked_sexy  = "heroes/Gabriela/Nacked/NackedGsexy.webp"
-image gabriela_nacked_eyes  = "heroes/Gabriela/Nacked/NackedGeyes.webp"
-image gabriela_nacked_sad   = "heroes/Gabriela/Nacked/NackedGsad.webp"
+image gabriela_nacked_flirt = "heroes/Gabriela/Nacked/GnackedFlirt.webp"
+image gabriela_nacked_sexy  = "heroes/Gabriela/Nacked/GnackedSexy.webp"
+image gabriela_nacked_eyes  = "heroes/Gabriela/Nacked/GnackedEyes.webp"
+image gabriela_nacked_sad   = "heroes/Gabriela/Nacked/GnackedSad.webp"
 
 # MASON
 define mas_text = Character("       Мейсон", image="к", color="#c2c2c2")
@@ -401,7 +401,7 @@ label start:
     gab_text ""
 
 
-
+    $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_left)
     gab_text "Left"
     $ swap_char("gabriela", gabriela_black, 0, small_char, slide_in_right)
     gab_text "Right"
@@ -435,7 +435,6 @@ label start:
     bow_text "Left"
     $ swap_char("bowie", bowie_nacked, 0, small_char, slide_in_right)
     bow_text "Right"
-    
 
     
     $ swap_char("stacey", stacey, 0, small_char, slide_in_left)
