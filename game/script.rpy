@@ -398,6 +398,12 @@ label start:
     dictore "как в дрянных подростковых сериалах?"
     dictore "{i}Ну уж нет. Я не для того пахала в Гарварде, чтобы здесь быть жертвой"
 
+    scene oks:
+        xalign 0.7
+        yalign 0.41
+        zoom 1.5
+        linear 0.5 alpha 1.0
+
     $ swap_char("margo", margo, 0, small_char, slide_in_right)
     mar_text ""
     mar_text ""
