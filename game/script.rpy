@@ -103,6 +103,11 @@ define oficiant_text = Character(" Официантка", image="к", color="#c2
 define oficiant_text_nvl = Character("Официантка", kind=nvl, image="edgy")
 image oficiant = "heroes/Other/Oficiant.webp"
 
+# НН
+define man_text = Character(" Мужчина", image="к", color="#c2c2c2")
+define man_text_nvl = Character("Мужчина", kind=nvl, image="edgy")
+define woman_text = Character("     Девушка", image="к", color="#c2c2c2")
+define woman_text_nvl = Character(" Девушка", kind=nvl, image="edgy")
 default bg_side = "center"
 
 init python:
@@ -419,7 +424,7 @@ label start:
     dictore "Её взгляд сканировал Меня, оценивая стоимость каждой вещи на ней."
 
     $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
-    sta_text "Новенькая посреди семестра? Интересно. Кому нужно было отсосать в ректорате, чтобы тебя воткнули на курс?"
+    woman_text "Новенькая посреди семестра? Интересно. Кому нужно было отсосать в ректорате, чтобы тебя воткнули на курс?"
 
     $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
 
@@ -430,17 +435,38 @@ label start:
             jump mode
 
         "А ты, видимо, эксперт в этом вопросе?":
-            gab_text "А ты, видимо, эксперт? Тоже пришлось пройти через этот «ритуал»?"
             jump after_choice
 
     label mode:
         gab_text "Я смотрю, нахальство — твоя доминирующая черта. С воспитанием в Англии, видимо, совсем беда."
+        $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
+        woman_text "Зубы мне не заговаривай, серая мышь. Иначе с тобой будут разбираться уже другие."
+        $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+        gab_text "«Другие» — это твоя свита из парней, которых ты держишь на поводке про запас?"
+        $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
+        woman_text "Милочка, тебе такую коллекцию мужчин не собрать даже за две жизни."
+        $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+        gab_text "О, поверь, я не горю желанием, чтобы меня имели в три ствола."
+        gab_text "Предпочитаю качество, а не количество."
+        $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
+        woman_text "Я прощу тебе дерзость сегодня. Первый и последний раз."
+        woman_text "Спишем на то, что ты просто не знаешь местных правил... пока."
+    jump next_scene
     label after_choice:
-        gab_text "Ладно, продолжим разговор."
+        gab_text "А ты, видимо, эксперт? Тоже пришлось пройти через этот «ритуал»?"
+        $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
+        woman_text "Сосать здесь скоро будешь ты, дорогая. И умолять о добавке."
+        $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+        gab_text "Прости, я не любительница брать в рот всё, что плохо лежит. Но, судя по твоим губам, у тебя большой опыт."
+        $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
+        woman_text "Судьба тебя заставит. От неё не убежишь... хи-хи."
+        dictore "Стейси грациозно развернулась, взмахнув идеальными волосами,"
+        dictore "и, виляя бедрами, направилась к группе своих клонов-подружек."
+        $ swap_char("gabriela", gabriela_normal_hero, 0, small_char, slide_in_left)
+        gab_text "Господи... Не успела ступить на порог, а уже вляпалась в местную драму."
 
-
-
-
+    label next_scene:
+        pass
 
     $ swap_char("margo", margo, 0, small_char, slide_in_right)
     mar_text ""
