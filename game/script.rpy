@@ -77,11 +77,16 @@ image stacey vampire = "heroes/Stacey/Svamp.webp"
 # OLIVIA
 define oli_text = Character("       Оливия", image="к", color="#c2c2c2")
 define oli_text_nvl = Character("Оливия", kind=nvl, image="edgy")
-image olivia normal = "heroes/Olivia/Onorm.webp"
-image olivia smile = "heroes/Olivia/Osmile.webp"
-image olivia angry = "heroes/Olivia/Oangry.webp"
-image olivia sad = "heroes/Olivia/Osad.webp"
-image olivia flirt = "heroes/Olivia/Oflirt.webp"
+image olivia normal = "heroes/Olivia/Normal/Onorm.webp"
+image olivia smile = "heroes/Olivia/Normal/Osmile.webp"
+image olivia angry = "heroes/Olivia/Normal/Oangry.webp"
+image olivia sad = "heroes/Olivia/Normal/Osad.webp"
+image olivia flirt = "heroes/Olivia/Normal/Oflirt.webp"
+
+image olivia NNorm = "heroes/Olivia/Nacked/OnackedNorm.webp"
+image olivia NSad = "heroes/Olivia/Nacked/OnackedSad.webp"
+image olivia NShy = "heroes/Olivia/Nacked/OnackedShy.webp"
+image olivia NSmile = "heroes/Olivia/Nacked/OnackedSmile.webp"
 
 # MARGO
 define mar_text = Character("     Маргарет", image="к", color="#c2c2c2")
