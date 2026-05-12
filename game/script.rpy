@@ -1,315 +1,7 @@
-﻿# GABRIELA
-define gab_text = Character("     Габриэла", image="к", color="#c2c2c2")
-define gab_text_nvl = Character("Габриэла", kind=nvl, image="edgy")
-image gabriela_without_smile   = "heroes/Gabriela/Gwithoutsmile.webp"
-image gabriela_happy    = "heroes/Gabriela/Normal/Ghappy.webp"
-image gabriela_angry    = "heroes/Gabriela/Normal/Gangry.webp"
-image gabriela_shy      = "heroes/Gabriela/Normal/shy.webp"
-image gabriela_surprise = "heroes/Gabriela/Normal/surprise.webp"
-image gabriela_sad      = "heroes/Gabriela/Normal/Gsad.webp" 
-image gabriela_normal   = "heroes/Gabriela/Normal/Gnorm.webp"
-
-image gabriela_white_normal = "heroes/Gabriela/White/GWnorm.webp"
-image gabriela_white_smile  = "heroes/Gabriela/White/GWsmile.webp"
-image gabriela_white_flirt  = "heroes/Gabriela/White/GWflirt.webp"
-image gabriela_white_sad    = "heroes/Gabriela/White/GWsad.webp"
-image gabriela_white_shok   = "heroes/Gabriela/White/GWshok.webp"
-image gabriela_white_angry  = "heroes/Gabriela/White/GWangry.webp"
-image gabriela_white_cry    = "heroes/Gabriela/White/GWcry.webp"
-
-image gabriela_black_normal = "heroes/Gabriela/Black/GBnormal.webp"
-image gabriela_black_smile  = "heroes/Gabriela/Black/GBsmile.webp"
-image gabriela_black_flirt  = "heroes/Gabriela/Black/GBflirt.webp"
-image gabriela_black_sad    = "heroes/Gabriela/Black/GBsad.webp"
-image gabriela_black_shok   = "heroes/Gabriela/Black/GBshok.webp"
-image gabriela_black_angry  = "heroes/Gabriela/Black/GBangry.webp"
-image gabriela_black_cry    = "heroes/Gabriela/Black/GBcry.webp"
-
-image gabriela_nacked_flirt = "heroes/Gabriela/Nacked/GnackedFlirt.webp"
-image gabriela_nacked_sexy  = "heroes/Gabriela/Nacked/GnackedSexy.webp"
-image gabriela_nacked_eyes  = "heroes/Gabriela/Nacked/GnackedEyes.webp"
-image gabriela_nacked_sad   = "heroes/Gabriela/Nacked/GnackedSad.webp"
-
-# MASON
-define mas_text = Character("       Мейсон", image="к", color="#c2c2c2")
-define mas_text_nvl = Character("Мейсон", kind=nvl, image="edgy")
-image mason normal   = "heroes/Mason/Normal/Maynorm.webp"
-image mason flirt    = "heroes/Mason/Normal/Mayflirt.webp"
-image mason sad      = "heroes/Mason/Normal/Maysad.webp"
-image mason smile      = "heroes/Mason/Normal/Maysmile.webp"
-image mason shok = "heroes/Mason/Normal/Mayshok.webp"
-image mason angry    = "heroes/Mason/Normal/Mangry.webp"
-
-image mason Nflirt = "heroes/Mason/Naked/MnackedFlirt.webp"
-image mason Njazyk = "heroes/Mason/Naked/MnackedJazyk.webp"
-image mason Nnorm = "heroes/Mason/Naked/MnackedNorm.webp"
-image mason Nsad = "heroes/Mason/Naked/MnackedSad.webp"
-
-# BOWIE
-define bow_text = Character("         Боуи", image="к", color="#c2c2c2")
-define bow_text_nvl = Character("Боуи", kind=nvl, image="edgy")
-image bowie shok   = "heroes/Bowie/Normal/Bshok.webp"
-image bowie flirt    = "heroes/Bowie/Normal/Bflirt.webp"
-image bowie sad      = "heroes/Bowie/Normal/Bsad.webp"
-image bowie vampire  = "heroes/Bowie/Normal/Bvamp.webp"
-image bowie angry  = "heroes/Bowie/Normal/Bangry.webp"
-
-image bowie nacked_angry = "heroes/Bowie/Nacked/BnackedAngry.webp"
-image bowie nacked_flirt = "heroes/Bowie/Nacked/BnackedFlirt.webp"
-image bowie nacked_norm = "heroes/Bowie/Nacked/BnackedNorm.webp"
-image bowie nacked_smile = "heroes/Bowie/Nacked/BnackedSmile.webp"
-
-# DICTORE
-define dictore = Character("             . . .", image="к", color="#c2c2c2")
-define dictore_nvl = Character("...", kind=nvl, image="edgy")
-
-# STACEY
-define sta_text = Character("       Стейси", image="к", color="#c2c2c2")
-define sta_text_nvl = Character("Стейси", kind=nvl, image="edgy")
-image stacey normal = "heroes/Stacey/Snorm.webp"
-image stacey flirt = "heroes/Stacey/Sflirt.webp"
-image stacey angry = "heroes/Stacey/Sangry.webp"
-image stacey cry = "heroes/Stacey/Scry.webp"
-image stacey sad = "heroes/Stacey/Ssad.webp"
-image stacey shok = "heroes/Stacey/Sshok.webp"
-image stacey vampire = "heroes/Stacey/Svamp.webp"
-
-# OLIVIA
-define oli_text = Character("       Оливия", image="к", color="#c2c2c2")
-define oli_text_nvl = Character("Оливия", kind=nvl, image="edgy")
-image olivia normal = "heroes/Olivia/Normal/Onorm.webp"
-image olivia smile = "heroes/Olivia/Normal/Osmile.webp"
-image olivia angry = "heroes/Olivia/Normal/Oangry.webp"
-image olivia sad = "heroes/Olivia/Normal/Osad.webp"
-image olivia flirt = "heroes/Olivia/Normal/Oflirt.webp"
-
-image olivia NNorm = "heroes/Olivia/Nacked/OnackedNorm.webp"
-image olivia NSad = "heroes/Olivia/Nacked/OnackedSad.webp"
-image olivia NShy = "heroes/Olivia/Nacked/OnackedShy.webp"
-image olivia NSmile = "heroes/Olivia/Nacked/OnackedSmile.webp"
-
-# MARGO
-define mar_text = Character("     Маргарет", image="к", color="#c2c2c2")
-define mar_text_nvl = Character("Маргарет", kind=nvl, image="edgy")
-image margo angry = "heroes/Margo/Mangry.webp"
-image margo flirt = "heroes/Margo/Mflirt.webp"
-image margo normal = "heroes/Margo/Mnormal.webp"
-image margo sad = "heroes/Margo/Msad.webp"
-image margo shok = "heroes/Margo/Mshok.webp"
-image margo strange = "heroes/Margo/Mstrange.webp"
-
-# ТАКСИСТ
-define taxi_driver = Character("      Таксист", image="к", color="#c2c2c2")
-define taxi_driver_nvl = Character("Таксист", kind=nvl, image="edgy")
-image taksist = "heroes/Other/taksist.webp"
-
-# ОФИЦИАНТКА
-define oficiant_text = Character(" Официантка", image="к", color="#c2c2c2")
-define oficiant_text_nvl = Character("Официантка", kind=nvl, image="edgy")
-image oficiant = "heroes/Other/Oficiant.webp"
-
-# НН
-define man_text = Character(" Мужчина", image="к", color="#c2c2c2")
-define man_text_nvl = Character("Мужчина", kind=nvl, image="edgy")
-define woman_text = Character("     Девушка", image="к", color="#c2c2c2")
-define woman_text_nvl = Character(" Девушка", kind=nvl, image="edgy")
-default bg_side = "center"
-
-init python:
+﻿label start:
+    default relation_stacey = 0
+    default reputation = 0
     
-    # ----------------- ГАБРИЕЛА -----------------
-    gabriela_normal_hero = [
-        "gabriela_normal",   #0
-        "gabriela_happy",    #1
-        "gabriela_angry",    #2
-        "gabriela_shy",      #3
-        "gabriela_surprise", #4
-        "gabriela_sad",      #5
-    ]
-
-    gabriela_white = [
-        "gabriela_white_normal", #0
-        "gabriela_white_smile",  #1
-        "gabriela_white_flirt",  #2
-        "gabriela_white_sad",    #3
-        "gabriela_white_shok",   #4
-        "gabriela_white_angry",  #5
-        "gabriela_white_cry",    #6
-    ]
-
-    gabriela_black = [
-        "gabriela_black_normal", #0
-        "gabriela_black_smile",  #1
-        "gabriela_black_flirt",  #2
-        "gabriela_black_sad",    #3
-        "gabriela_black_shok",   #4
-        "gabriela_black_angry",  #5
-        "gabriela_black_cry",    #6
-    ]
-
-    gabriela_nacked = [
-        "gabriela_nacked_flirt", #0
-        "gabriela_nacked_sexy",  #1
-        "gabriela_nacked_eyes",  #2
-        "gabriela_nacked_sad",   #3
-    ]
-    # ----------------- МЕЙСОН -----------------
-    mason = [
-        "mason normal", #0
-        "mason flirt",  #1
-        "mason sad",    #2
-        "mason smile",  #3
-        "mason shok",   #4
-        "mason angry",  #5
-    ]
-
-    mason_nacked = [
-        "mason Nnorm",  #0
-        "mason Nflirt", #1
-        "mason Njazyk", #2
-        "mason Nsad",   #3
-    ]
-
-    # ----------------- БОУВИ -----------------
-    bowie = [
-        "bowie flirt",   #0
-        "bowie shok",    #1
-        "bowie sad",     #2
-        "bowie vampire", #3
-        "bowie angry",   #4
-    ]
-
-    bowie_nacked = [
-        "bowie nacked_norm",
-        "bowie nacked_flirt",
-        "bowie nacked_smile",
-        "bowie nacked_angry",
-    ]
-
-    # ----------------- СТАЙСИ -----------------
-    stacey = [
-        "stacey normal",  #0
-        "stacey flirt",   #1
-        "stacey angry",   #2
-        "stacey cry",     #3
-        "stacey sad",     #4
-        "stacey shok",    #5
-        "stacey vampire", #6
-    ]
-
-    # ----------------- ОЛИВИЯ -----------------
-    olivia = [
-        "olivia normal", #0
-        "olivia smile",  #1
-        "olivia angry",  #2
-        "olivia sad",    #3
-        "olivia flirt",  #4
-    ]
-
-    # ----------------- МАРГО -----------------
-    margo = [
-        "margo normal",  #0
-        "margo sad",     #1
-        "margo angry",   #2
-        "margo shok",    #3
-        "margo strange", #4
-        "margo flirt",   #5
-    ]
-
-    taksist = [
-        "taksist",  #0
-    ]
-
-    oficiant = [
-        "oficiant",  #0
-    ]
-
-    small_char = Transform(
-        zoom=1,
-        yalign=1.0
-    )
-
-    def textbox(n):
-        store.tb_id = n
-
-    active_characters = []
-
-    def swap_char(tag_name, char_array, index, *transforms):
-
-        global active_characters
-
-        # Скрываем всех предыдущих
-        for tag in active_characters:
-            if tag != tag_name:
-                renpy.hide(tag)
-
-        active_characters = [tag_name]
-
-        # Показываем нового
-        renpy.show(
-            char_array[index],
-            tag=tag_name,
-            at_list=list(transforms)
-    )
-
-    def show_two_heous(tag_name, char_array, index, *transforms):
-
-        # Показываем нового
-        renpy.show(
-            char_array[index],
-            tag=tag_name,
-            at_list=list(transforms)
-    )
-
-
-transform slide_in_left:
-    xalign -0.9
-    yalign 1.0
-    alpha 0.0
-    zoom 0.9
-    linear 0.5 xalign 0.1 alpha 1.0
-
-transform slide_in_right:
-    xalign 1.5
-    yalign 1.0
-    alpha 0.0
-    zoom 0.9
-    linear 0.5 xalign 0.9 alpha 1.0
-
-image airport = "gui/BGs/BgAirplaneInside.webp"
-image taxi_air = "gui/BGs/BgAirplaneStreet.webp"
-image in_taxi = "gui/BGs/BgCar.webp"
-
-image r1_d = "gui/BGs/BgRoom1Day.webp"
-image r1_n = "gui/BGs/BgRoom1Night.webp"
-
-image r2_d = "gui/BGs/BgRoom2Day.webp"
-image r2_n = "gui/BGs/BgRoom2Night.webp"
-
-image r3_d = "gui/BGs/BgRoom3Day.webp"
-image r3_n = "gui/BGs/BgRoom3Night.webp"
-
-image cl = "gui/BGs/BgClass.webp"
-image dv = "gui/BGs/BgDvor.webp"
-
-image kor_c = "gui/BGs/BgKoridorCampus.webp"
-image kor_u = "gui/BGs/BgKoridorUniv.webp"
-image oks = "gui/BGs/BgOksford.webp"
-
-transform gentle_sway:
-    # Немного увеличиваем фон, чтобы при сдвиге не вылезали черные края экрана
-    # zoom 1.05 align (0.5, 0.5)
-    
-    # Плавное движение
-    ease 0.5 yoffset 1 xoffset -10
-    ease 0.5 yoffset -2 xoffset -20
-    ease 0.5 yoffset 0 xoffset -15
-    
-    # Зацикливаем анимацию
-    repeat
-
-label start:
-
     scene airport: #Двигать фон
         xalign 0.0
         yalign 0.4
@@ -458,6 +150,7 @@ label start:
         woman_text "Спишем на то, что ты просто не знаешь местных правил... пока."
     jump next_scene
     label after_choice:
+        $ swap_char("gabriela", gabriela_normal_hero, 1, small_char, slide_in_left)
         gab_text "А ты, видимо, эксперт? Тоже пришлось пройти через этот «ритуал»?"
         $ swap_char("stacey", stacey, 0, small_char, slide_in_right)
         woman_text "Сосать здесь скоро будешь ты, дорогая. И умолять о добавке."
@@ -471,6 +164,23 @@ label start:
         gab_text "Господи... Не успела ступить на порог, а уже вляпалась в местную драму."
 
     label next_scene:
+        pass
+    menu:
+        dictore "{i}Перед вами выбор комнаты. Это повлияет на атмосферу и ваши характеристики"
+        
+        "Уютная мансарда (Светлая, с запахом лаванды и мягким пледом)":
+            jump peace
+        "Готическая спальня (Темное дерево, тяжелые портьеры, свечи)":
+            jump bedroom
+        "Стильный модерн (Минимализм, дорогие материалы, идеальный порядок)":
+            jump modern
+
+
+    label peace:
+        pass
+    label bedroom:
+        pass
+    label modern:
         pass
 
     $ swap_char("margo", margo, 0, small_char, slide_in_right)
